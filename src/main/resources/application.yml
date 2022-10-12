@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/newdb
+    username: developer
+    password: Developer@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+  jackson:
+    serialization:
+      fail_on_empty_beans: false
+
+---
+environment: test
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: test
+    password: test
+    driver-class-name: org.h2.Driver
+  jpa:
+    database: h2
+
+  h2:
+    console:
+      enabled: true
